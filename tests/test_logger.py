@@ -3,7 +3,7 @@ import sys
 import unittest
 from unittest.mock import patch
 
-from falken_teleworking import logger
+from falken_detector import logger
 
 
 def redirect_stdout():

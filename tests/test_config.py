@@ -1,6 +1,6 @@
 import unittest
 
-from falken_teleworking import config
+from falken_detector import config
 
 class TestConfig(unittest.TestCase):
 

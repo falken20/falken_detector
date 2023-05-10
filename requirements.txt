@@ -1,9 +1,4 @@
-Flask
 python-dotenv
 rich>=11.2.0
-requests
-gunicorn  # Neccesary for app.yaml
-pydantic # Neccesary for config.py
-flask-sqlalchemy
-psycopg2-binary
-flask-login
+pydantic # Library that uses type annotation to validate data and manage settings.
+
