@@ -1,5 +1,5 @@
 # by Richi Rod AKA @richionline / falken20
-# ./falken_teleworking/config.py
+# ./falken_detector/config.py
 
 # Library that uses type annotation to validate data and manage settings.
 from pydantic import BaseSettings

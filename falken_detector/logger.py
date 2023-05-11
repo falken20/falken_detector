@@ -1,5 +1,5 @@
 # by Richi Rod AKA @richionline / falken20
-# ./falken_teleworking/logger.py
+# ./falken_detector/logger.py
 
 import sys
 import os
