@@ -11,14 +11,7 @@ import cv2
 # The mediapipe object detector requires a trained model
 # More information and trained models:
 # https://developers.google.com/mediapipe/solutions/vision/object_detector/index#models
-model_path = './trained_model/efficientdet_lite0.tflite'
-
-
-BaseOptions = python.BaseOptions
-ObjectDetector = vision.ObjectDetector
-ObjectDetectorOptions = vision.ObjectDetectorOptions
-VisionRunningMode = vision.RunningMode
-
+MODEL_PATH = './trained_model/efficientdet_lite0.tflite'
 IMAGE_FILE = "https://storage.googleapis.com/mediapipe-tasks/object_detector/cat_and_dog.jpg"
 
 MARGIN = 10  # pixels
@@ -60,25 +53,29 @@ def visualize(
 
 
 def detect_image() -> None:
-    options = ObjectDetectorOptions(
-        base_options=BaseOptions(model_asset_path=model_path),
+
+    options = vision.ObjectDetectorOptions(
+        base_options=python.BaseOptions(model_asset_path=MODEL_PATH),
         max_results=5,
-        running_mode=VisionRunningMode.IMAGE
+        running_mode=vision.RunningMode.IMAGE,
+        score_threshold=0.5
     )
 
-    with ObjectDetector.create_from_options(options) as detector:
-        # Load the input image
-        image = cv2.imread(IMAGE_FILE)
-        cv2.imshow(image)
+    detector = vision.ObjectDetector.create_from_options(options)
 
-        # Detect objects in the input image
-        detection_result = detector.detect(image)
+    # Load the input image
+    image = cv2.imread(IMAGE_FILE)
+    cv2.imshow(image)
 
-        # Process the detection result, in this case, visualize it
-        image_copy = np.copy(image.numpy_view())
-        annotated_image = visualize(image_copy, detection_result)
-        rgb_annotated_image = cv2.cvtColor(annotated_image, cv2.COLOR_BGR2RGB)
-        cv2.imshow(rgb_annotated_image)
+    # Detect objects in the input image
+    detection_result = detector.detect(image)
+
+    # Process the detection result, in this case, visualize it
+    image_copy = np.copy(image.numpy_view())
+    annotated_image = visualize(image_copy, detection_result)
+    rgb_annotated_image = cv2.cvtColor(annotated_image, cv2.COLOR_BGR2RGB)
+    cv2.imshow(rgb_annotated_image)
+
 
 if __name__ == '__main__':
     detect_image()
