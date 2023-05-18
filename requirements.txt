@@ -2,4 +2,10 @@ python-dotenv
 rich>=11.2.0
 pydantic # Library that uses type annotation to validate data and manage settings.
 
+# Mediapipe algorithm
 mediapipe # Google library object detection
+
+# YOLO algorithm
+imageAI
+opencv-python
+Pillow

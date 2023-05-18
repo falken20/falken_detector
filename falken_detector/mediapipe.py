@@ -1,5 +1,8 @@
 # by Richi Rod AKA @richionline / falken20
-# ./falken_detector/main.py
+# ./falken_detector/mediapipe.py
+
+# MediaPipe Solutions provides a suite of libraries and tools for you to quickly apply artificial
+# intelligence (AI) and machine learning (ML) techniques in your applications.
 
 import numpy as np
 import mediapipe as mp
