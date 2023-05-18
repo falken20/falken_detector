@@ -5,3 +5,5 @@
 # objects within an image. The YOLO algorithm breaks an image down into smaller regions. 
 
 from imageai.Detection import VideoObjectDetection
+
+vid_obj_detect = VideoObjectDetection()
