@@ -14,7 +14,7 @@ import cv2
 # The mediapipe object detector requires a trained model
 # More information and trained models:
 # https://developers.google.com/mediapipe/solutions/vision/object_detector/index#models
-MODEL_PATH = './trained_model/efficientdet_lite0.tflite'
+MODEL_PATH = './falken_detector/trained_model/efficientdet_lite0.tflite'
 IMAGE_FILE = "https://storage.googleapis.com/mediapipe-tasks/object_detector/cat_and_dog.jpg"
 
 MARGIN = 10  # pixels

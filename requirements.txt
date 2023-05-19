@@ -9,3 +9,6 @@ mediapipe # Google library object detection
 imageAI
 opencv-python
 Pillow
+torch
+TorchVision
+tk # tkinter
